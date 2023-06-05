@@ -144,9 +144,6 @@ function my_plugin_register_rewrite_rule($rules)
     'atlas-docs/?$' => 'index.php?lamb_plugin_page=1'
   );
 
-  // Flush rewrite rules
-  flush_rewrite_rules();
-
   return $new_rules + $rules;
 }
 add_filter('rewrite_rules_array', 'my_plugin_register_rewrite_rule');
