@@ -1,0 +1,23 @@
+#atlas-docs {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-link {
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.list-border {
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+}
+
+@media only screen and (min-width: 767px) {
+  .list-border {
+    border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    border-bottom: 0;
+  }
+}
