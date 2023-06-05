@@ -11,7 +11,7 @@
  * Plugin Name:   Atlas Documenation
  * Plugin URI:    https://www.lambagency.com.au/
  * Description:   This plugin creates a local version of documentation on the client site.
- * Version:       1.0.0
+ * Version:       1.0.1
  * Author:        Lamb Agency
  * Author URI:    https://www.lambagency.com.au/
  * Text Domain:   lamb-documentation
