@@ -5,13 +5,13 @@
  *
  * @package       ATLASDOCS
  * @author        Lamb Agency
- * @version       1.1.0
+ * @version       1.1.1
  *
  * @wordpress-plugin
  * Plugin Name:   Atlas Documenation
  * Plugin URI:    https://github.com/kyle-lambAgency/lamb-documentation
  * Description:   This plugin creates a local version of documentation on the client site.
- * Version:       1.1.0
+ * Version:       1.1.1
  * Author:        Lamb Agency
  * Author URI:    https://www.lambagency.com.au/
  * Text Domain:   lamb-documentation
@@ -50,11 +50,11 @@ add_action('admin_menu', 'add_lamb_docs_page');
 function lamb_documentation_page_contents()
 {
 ?>
-  <h1>
-    Lamb Documentation.
-  </h1>
+<h1>
+  Lamb Documentation.
+</h1>
 
-  <?php
+<?php
 
   // General check for user permissions.
   if (!current_user_can('manage_options')) {
