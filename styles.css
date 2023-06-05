@@ -15,6 +15,10 @@
   border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
 }
 
+section>p {
+  display: none;
+}
+
 @media only screen and (min-width: 767px) {
   .list-border {
     border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
