@@ -5,13 +5,13 @@
  *
  * @package       ATLASDOCS
  * @author        Lamb Agency
- * @version       1.1.1
+ * @version       1.2.0
  *
  * @wordpress-plugin
  * Plugin Name:   Atlas Documenation
  * Plugin URI:    https://github.com/kyle-lambAgency/lamb-documentation
  * Description:   This plugin creates a local version of documentation on the client site.
- * Version:       1.1.1
+ * Version:       1.2.0
  * Author:        Lamb Agency
  * Author URI:    https://www.lambagency.com.au/
  * Text Domain:   lamb-documentation
@@ -50,11 +50,11 @@ add_action('admin_menu', 'add_lamb_docs_page');
 function lamb_documentation_page_contents()
 {
 ?>
-<h1>
-  Lamb Documentation.
-</h1>
+  <h1>
+    Lamb Documentation.
+  </h1>
 
-<?php
+  <?php
 
   // General check for user permissions.
   if (!current_user_can('manage_options')) {
@@ -141,17 +141,21 @@ function import_docs($cat_it)
 function my_plugin_register_rewrite_rule($rules)
 {
   $new_rules = array(
-    'atlas-docs/?$' => 'index.php'
+    'atlas-docs/?$' => 'index.php?lamb_plugin_page=1'
   );
+
+  // Flush rewrite rules
+  flush_rewrite_rules();
 
   return $new_rules + $rules;
 }
 add_filter('rewrite_rules_array', 'my_plugin_register_rewrite_rule');
 
+
 // Register the query variable
 function my_plugin_register_query_var($vars)
 {
-  $vars[] = 'my_plugin_page';
+  $vars[] = 'lamb_plugin_page';
   return $vars;
 }
 add_filter('query_vars', 'my_plugin_register_query_var');
@@ -160,7 +164,7 @@ add_filter('query_vars', 'my_plugin_register_query_var');
 function my_plugin_template_include($template)
 {
   // Check if the custom query variable is set
-  if (get_query_var('my_plugin_page')) {
+  if (get_query_var('lamb_plugin_page')) {
     // Set the path to your custom template file
     $template = plugin_dir_path(__FILE__) . 'client-docs.php';
   }

@@ -32,12 +32,13 @@ include('page-templates/header.php');
         let noResults = document.getElementById("no-results");
         let allPosts = [];
 
-        fetch("http://apollo.local/wp-json/wp/v2/lamb-documentation?per_page=100")
+        fetch(window.location.origin + "/wp-json/wp/v2/lamb-documentation?per_page=100")
           .then(function(response) {
             return response.json();
           })
           .then(function(posts) {
-            posts.sort((a, b) => a.name < b.name ? -1 : a.name === b.name ? 0 : 1)
+            posts.sort((a, b) => a.title.rendered < b.title.rendered ? -1 : a.title.rendered === b.title.rendered ?
+              0 : 1)
             allPosts = posts;
             renderPosts(allPosts);
           });
@@ -59,7 +60,7 @@ include('page-templates/header.php');
                 e.preventDefault();
                 let postId = e.target.dataset.postId;
                 let postContent = document.getElementById("post-content");
-                fetch("http://apollo.local/wp-json/wp/v2/lamb-documentation/" + postId)
+                fetch(window.location.origin + "/wp-json/wp/v2/lamb-documentation/" + postId)
                   .then(function(response) {
                     return response.json();
                   })
@@ -108,7 +109,7 @@ include('page-templates/header.php');
 
         function fetchPostContent(postTitle) {
           var postContent = document.getElementById("post-content");
-          fetch("http://apollo.local/wp-json/wp/v2/lamb-documentation?slug=" + encodeURIComponent(postTitle))
+          fetch(window.location.origin + "/wp-json/wp/v2/lamb-documentation/?slug=" + encodeURIComponent(postTitle))
             .then(function(response) {
               return response.json();
             })
