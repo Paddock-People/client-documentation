@@ -151,7 +151,7 @@ add_filter('rewrite_rules_array', 'my_plugin_register_rewrite_rule');
 // Register the query variable
 function my_plugin_register_query_var($vars)
 {
-  $vars[] = 'lamb_docs_plugin';
+  $vars[] = 'my_plugin_page';
   return $vars;
 }
 add_filter('query_vars', 'my_plugin_register_query_var');
@@ -160,7 +160,7 @@ add_filter('query_vars', 'my_plugin_register_query_var');
 function my_plugin_template_include($template)
 {
   // Check if the custom query variable is set
-  if (get_query_var('lamb_docs_plugin')) {
+  if (get_query_var('my_plugin_page')) {
     // Set the path to your custom template file
     $template = plugin_dir_path(__FILE__) . 'client-docs.php';
   }
