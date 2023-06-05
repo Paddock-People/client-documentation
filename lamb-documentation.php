@@ -5,13 +5,13 @@
  *
  * @package       ATLASDOCS
  * @author        Lamb Agency
- * @version       1.0.2
+ * @version       1.1.0
  *
  * @wordpress-plugin
  * Plugin Name:   Atlas Documenation
  * Plugin URI:    https://github.com/kyle-lambAgency/lamb-documentation
  * Description:   This plugin creates a local version of documentation on the client site.
- * Version:       1.0.2
+ * Version:       1.1.0
  * Author:        Lamb Agency
  * Author URI:    https://www.lambagency.com.au/
  * Text Domain:   lamb-documentation
@@ -151,7 +151,7 @@ add_filter('rewrite_rules_array', 'my_plugin_register_rewrite_rule');
 // Register the query variable
 function my_plugin_register_query_var($vars)
 {
-  $vars[] = 'my_plugin_page';
+  $vars[] = 'lamb_docs_plugin';
   return $vars;
 }
 add_filter('query_vars', 'my_plugin_register_query_var');
@@ -160,7 +160,7 @@ add_filter('query_vars', 'my_plugin_register_query_var');
 function my_plugin_template_include($template)
 {
   // Check if the custom query variable is set
-  if (get_query_var('my_plugin_page')) {
+  if (get_query_var('lamb_docs_plugin')) {
     // Set the path to your custom template file
     $template = plugin_dir_path(__FILE__) . 'client-docs.php';
   }
@@ -184,3 +184,26 @@ $myUpdateChecker->setBranch('main');
 
 //Optional: If you're using a private repository, specify the access token like this:
 // $myUpdateChecker->setAuthentication('your-token-here');
+
+function create_posttype()
+{
+  register_post_type(
+    'lamb-documentation',
+    // CPT Options
+    array(
+      'labels' => array(
+        'name' => __('Lamb Documentation'),
+        'singular_name' => __('Lamb Documentation')
+      ),
+      'public' => true,
+      'show_ui' => true,
+      'show_in_rest' => true,
+      'has_archive' => false,
+      'rewrite' => array('slug' => 'lamb-documentation'),
+      'exclude_from_search' => true, // Exclude from search results
+      'publicly_queryable'  => true, // Make not publicly queryable
+    )
+  );
+}
+// Hooking up our function to theme setup
+add_action('init', 'create_posttype');
