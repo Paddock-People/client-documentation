@@ -65,7 +65,8 @@ include('page-templates/header.php');
                     return response.json();
                   })
                   .then(function(post) {
-                    postContent.innerHTML = post.content.rendered;
+                    postContent.innerHTML = "<h2 class='mb-2'>" + post.title.rendered + "</h2>" + post
+                      .content.rendered;
 
                     // Update the URL
                     let postTitle = post.title.rendered.replace(/\s+/g, "-")
@@ -115,7 +116,8 @@ include('page-templates/header.php');
             })
             .then(function(posts) {
               if (posts.length > 0) {
-                postContent.innerHTML = posts[0].content.rendered;
+                postContent.innerHTML = "<h2 class='mb-2'>" + posts[0].title.rendered + "</h2>" + posts[0].content
+                  .rendered;
               }
             });
         }
