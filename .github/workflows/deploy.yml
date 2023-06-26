@@ -19,5 +19,5 @@ jobs:
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ${{github.workspace}/client-documentation.zip
-          asset_name: spatie-ray.zip
+          asset_name: client-documentation.zip
           asset_content_type: application/zip
