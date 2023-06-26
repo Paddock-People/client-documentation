@@ -1,0 +1,5 @@
+/.git
+/.github
+/vendor-bin
+
+composer.lock
