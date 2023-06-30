@@ -1,17 +1,16 @@
 <?php
-
 /**
- * Atlas Documenation
+ * Client Documentation
  *
  * @package       ATLASDOCS
  * @author        Paddock People
- * @version       1.3.0
+ * @version       1.4.4
  *
  * @wordpress-plugin
- * Plugin Name:   Atlas Documenation
+ * Plugin Name:   Client Documentation
  * Plugin URI:    https://github.com/Paddock-People/client-documentation
  * Description:   This plugin creates a local version of documentation on the client site.
- * Version:       1.3.0
+ * Version:       1.4.4
  * Author:        Paddock People
  * Author URI:    https://www.paddockpeople.com.au/
  * Text Domain:   lamb-documentation
