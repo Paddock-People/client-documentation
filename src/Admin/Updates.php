@@ -13,6 +13,6 @@ class Updates
             __FILE__,
             'client-documentation'
         );
-        $update_checker->setBranch('main');
+        $update_checker->getVcsApi()->enableReleaseAssets('client-documentation.*\.zip');
     }
 }

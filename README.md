@@ -1,4 +1,4 @@
-﻿# Lamb Documentation  
+﻿# Client Documentation  
 Contributors: The Paddock People  
 Requires at least: 6.0  
 Tested up to: 6.2.2  
@@ -46,4 +46,4 @@ You will need to contact your Account Manager at Lamb Agency.
 * Updates will become available to sites on wordpress check for updates ( Twice a day at last check) or
   * Go to the site needing update
   * From the Plugins page
-  * Click Check for updates next to Atlas Documenation 
+  * Click Check for updates next to Atlas Documentation 

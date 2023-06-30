@@ -12,7 +12,7 @@ jobs:
           composer install -o --no-dev --ignore-platform-reqs
       - uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r client-documentation.zip vendor src assets ./client-documentation.php ./index.php
+          args: zip -qq -r client-documentation.zip vendor src assets ./client-documentation.php ./index.php ./readme.txt
       - name: Upload release asset
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
