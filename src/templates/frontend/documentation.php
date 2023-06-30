@@ -1,6 +1,4 @@
-<?php $plugin_folder_url = ATLAS_DOCS_PLUGIN_URL; ?>
-
-<link rel="stylesheet" href="<?php echo $plugin_folder_url; ?>assets/styles.css">
+<link rel="stylesheet" href="<?php echo ATLAS_DOCS_PLUGIN_URL; ?>assets/styles.css">
 
 <div class="atlas-docs">
   <div class="container">
@@ -13,7 +11,7 @@
       </div>
       <div class="col-md-8 col-lg-9 mt-md-0 mt-30">
         <div id="post-content">
-          <h2 class="mb-0">ATLAS DOCS</h2>
+          <h2 class="mb-0">Client Documentation</h2>
           <p>Brought to you by the Paddock People</p>
         </div>
       </div>

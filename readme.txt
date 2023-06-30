@@ -22,6 +22,8 @@ Install Instructions coming soon.
 You will need to contact your Account Manager at Lamb Agency.
 
 ## Changelog
+### v.1.4.6
+* Allow frontend templates to be overridden in themes
 
 ### v.1.2.0
 * Reworked the create atlas-docs page was causing issues in new environments.
@@ -34,16 +36,11 @@ You will need to contact your Account Manager at Lamb Agency.
 ##  Create Updates for plugin
 
 * Make changes to plugin
-* Update Version number in lamb-documentation.php
+* Update Version number in client-documentation.php
+* Tag the repo with the new plugin version number
 * Push new changes to the Git Repo
-
-* https://github.com/Paddock-People/client-documentation/releases
-  * Draft a new release
-  * Create a new tag ( Match the version number updated above )
-  * Fill in details
-  * Publish Release
 
 * Updates will become available to sites on wordpress check for updates ( Twice a day at last check) or
   * Go to the site needing update
   * From the Plugins page
-  * Click Check for updates next to Atlas Documentation
+  * Click Check for updates next to Client Documentation

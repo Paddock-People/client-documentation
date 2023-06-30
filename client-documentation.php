@@ -4,13 +4,13 @@
  *
  * @package       ATLASDOCS
  * @author        Paddock People
- * @version       1.4.3
+ * @version       1.4.6
  *
  * @wordpress-plugin
  * Plugin Name:   Client Documentation
  * Plugin URI:    https://github.com/Paddock-People/client-documentation
  * Description:   This plugin creates a local version of documentation on the client site.
- * Version:       1.4.5
+ * Version:       1.4.6
  * Author:        Paddock People
  * Author URI:    https://www.paddockpeople.com.au/
  * Text Domain:   lamb-documentation
